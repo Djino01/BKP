@@ -1,0 +1,38 @@
+@@include('inc/doc-start.html', {
+"title": "Авторизация"
+})
+
+@@include('inc/page-header.html', {
+color: 'header--light'
+})
+
+<form action="#" class="form">
+	<h1 class="form__title title">Авторизация</h1>
+	<div class="form__body">
+		<label class="form__label">
+			<div class="form__caption">Введите почту</div>
+			<div class="form__box">
+				<input type="email" name="email" class="form__field">
+			</div>
+		</label>
+		<label class="form__label">
+			<div class="form__caption">Введите пароль</div>
+			<div class="form__box">
+				<input type="password" name="password" class="form__field">
+				<div class="form__password">
+					<img src="img/password.svg" alt="">
+					<img src="img/password-active.svg" alt="">
+				</div>
+			</div>
+		</label>
+	</div>
+	<div class="form__bottom">
+		<button class="form__btn">Авторизация</button>
+		<div class="form__agreement"><a href="password-recovery.html">Не помню пароль</a></div>
+		<div class="form__agreement">Нет аккаунта? <a href="registration.html">Зарегистрируйтесь</a></div>
+	</div>
+</form>
+
+@@include('inc/page-footer.html')
+
+@@include('inc/doc-end.html')
