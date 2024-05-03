@@ -1,0 +1,47 @@
+.footer {
+	position: fixed;
+	width: 100%;
+	height: 80px;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	border-top: 1px solid #e7e7e7;
+	box-shadow: 0 -4px 4px 0 rgba(231, 231, 231, 0.25);
+	background-color: #fff;
+	padding: 10px 20px;
+	&__menu {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 100px;
+	}
+	&__link {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		font-weight: 600;
+		font-size: 12px;
+		text-align: center;
+		color: #292d32;
+		transition: color 0.3s;
+		&-icon {
+			height: 34px;
+			display: flex;
+			justify-content: center;
+			svg {
+				* {
+					transition: all 0.3s;
+				}
+			}
+		}
+		&.active,
+		&:hover {
+			color: #73a09a;
+			svg {
+				* {
+					stroke: #73a09a;
+				}
+			}
+		}
+	}
+}

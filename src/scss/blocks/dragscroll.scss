@@ -1,0 +1,42 @@
+.dragscroll {
+	overflow: auto;
+
+	&::-webkit-scrollbar {
+		width: 4px;
+		height: 88px;
+		background-color: rgba(115, 160, 154, 0);
+		border-radius: 4px;
+		transition: all 0.3s;
+		opacity: 0;
+		display: block;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(115, 160, 154, 1);
+		border-radius: 4px;
+		transition: all 0.3s;
+		cursor: pointer;
+		display: block;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(115, 160, 154, 0.8);
+		transition: all 0.3s;
+	}
+
+	&::-webkit-scrollbar-button:vertical:start:decrement {
+		display: none;
+	}
+
+	&::-webkit-scrollbar-button:vertical:end:increment {
+		display: none;
+	}
+
+	&::-webkit-scrollbar-button:horizontal:start:decrement {
+		display: none;
+	}
+
+	&::-webkit-scrollbar-button:horizontal:end:increment {
+		display: none;
+	}
+}

@@ -1,0 +1,55 @@
+.card {
+	display: flex;
+	align-items: flex-end;
+	gap: 12px;
+	&__avatar {
+		width: 56px;
+		height: 56px;
+		border-radius: 100%;
+		background-color: #f3f3f3;
+		border: 2px solid #73a09a;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		flex: 1;
+		border: 1px solid #73a09a;
+		border-radius: 12px;
+		padding: 12px;
+		background-color: var(--white);
+	}
+	&__name {
+		font-weight: 600;
+		font-size: 16px;
+	}
+	&__item {
+		span {
+			color: #73a09a;
+		}
+		& + & {
+			margin-top: 10px;
+		}
+	}
+	&__img {
+		width: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+	&__date {
+		font-style: italic;
+		font-weight: 300;
+		font-size: 12px;
+		text-align: right;
+		color: #73a09a;
+	}
+}

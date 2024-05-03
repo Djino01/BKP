@@ -1,0 +1,26 @@
+.tape {
+	padding-top: 55px;
+	padding-bottom: 80px;
+	&__body {
+		height: calc(100vh - 135px);
+		padding: 22px 20px;
+	}
+	&__wrap {
+		display: flex;
+		flex-direction: column;
+		gap: 22px;
+	}
+	&__bottom {
+		display: flex;
+		justify-content: center;
+		margin-top: 40px;
+	}
+	&__btn {
+		display: inline-flex;
+		font-weight: 600;
+		font-size: 14px;
+		text-transform: uppercase;
+		text-decoration: underline;
+		color: #73a09a;
+	}
+}

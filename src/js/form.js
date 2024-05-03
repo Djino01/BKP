@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     let form = document.querySelector('.form');
-    form.addEventListener('submit', function(event) {
+    form?.addEventListener('submit', function(event) {
 		let error = false;
         let formLabels = document.querySelectorAll('.form__label');
 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             if (inputField.value.trim() === '') {
-                errorBox.textContent = 'Проверьте правильность введенных данных';
+                errorBox.textContent = 'Проверьте корректность введенных данных';
                 errorBox.classList.add('active');
                 error = true;
             } else {

@@ -1,0 +1,163 @@
+.course {
+	border: 1px solid #73a09a;
+	border-radius: 12px;
+	padding: 12px;
+	background-color: #fff;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 138%;
+	cursor: pointer;
+	&__top {
+		&-wrap {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 12px;
+		}
+		&-info {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
+	}
+	&__caption {
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	&__date {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+	&__residue {
+		padding-left: 25px;
+	}
+	&__arrow {
+		transition: all 0.3s;
+	}
+	&__hidden {
+		display: none;
+		margin-top: 22px;
+	}
+	&__link {
+		display: inline-flex;
+		text-transform: uppercase;
+		text-decoration: underline;
+		color: #0039a6;
+		margin-top: 40px;
+		margin-bottom: 28px;
+	}
+	& + & {
+		margin-top: 22px;
+	}
+	&.active {
+		.course {
+			&__hidden {
+				display: block;
+			}
+			&__arrow {
+				transform: scaleY(-1);
+			}
+		}
+	}
+}
+
+.course-info {
+	display: flex;
+	gap: 22px;
+	padding-left: 25px;
+	text-align: center;
+	&__top {
+		position: relative;
+		width: 44px;
+		height: 44px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 8px;
+	}
+	&__circle {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	&__value {
+		font-weight: 600;
+		font-size: 16px;
+		small {
+			font-size: 12px;
+		}
+	}
+}
+
+.course-programm {
+	padding-top: 22px;
+	&__title {
+		text-transform: uppercase;
+		margin-bottom: 22px;
+	}
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: 22px;
+	}
+	&__top {
+		border-bottom: 1px solid #e7e7e7;
+		border-top: 1px solid #e7e7e7;
+		border-radius: 12px;
+		padding: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-left: -12px;
+		margin-right: -12px;
+	}
+	&__caption {
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	&__arrow {
+		transition: all 0.3s;
+	}
+	&__hidden {
+		display: none;
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: var(--dark);
+		margin-top: 22px;
+		&-dots {
+			width: 20px;
+			height: 20px;
+			border: 1.5px solid #73a09a;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: -2px;
+			margin-bottom: -2px;
+			img {
+				opacity: 0;
+				transition: opacity 0.3s;
+			}
+			&.active {
+				img {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&__accordion {
+		&.active {
+			.course-programm {
+				&__hidden {
+					display: block;
+				}
+				&__arrow {
+					transform: scaleY(-1);
+				}
+			}
+		}
+	}
+}
