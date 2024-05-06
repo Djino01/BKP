@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 	
 	modalForm?.addEventListener('click', function(e) {
+		e.preventDefault();
 
 		function serializeForm(formElement) {
 			const formData = new FormData(formElement);
