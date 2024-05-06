@@ -1,47 +1,62 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.menu-search--js [name="category"]').forEach(input => {
-        input.addEventListener('keyup', function() {
-            let val = this.value.toLowerCase();
-            if (val === '') {
-                document.querySelectorAll('.menu__course-box.selected').forEach(item => item.classList.remove('selected'));
-                document.querySelectorAll('.menu__course').forEach(acc => acc.classList.remove('hide-accardeon'));
-            } else {
-                document.querySelectorAll('[data-name-menu]').forEach(item => {
-                    if (item.getAttribute('data-name-menu').toLowerCase().includes(val)) {
-                        item.classList.remove('hide-accardeon');
-                        console.log(val);
-                    } else {
-                        item.classList.add('hide-accardeon');
-                    }
-                });
-                document.querySelectorAll('.menu__list').forEach(list => {
-                    let allVacancies = list.querySelectorAll('li').length;
-                    let allVacanciesHide = list.querySelectorAll('li.hide-accardeon').length;
-                    if (allVacancies === allVacanciesHide) {
-                        list.closest('.menu__course-box').classList.remove('selected');
-                        list.closest('.menu__course-box').previousElementSibling.classList.remove('selected');
-                        list.closest('.menu__course').classList.add('hide-accardeon');
-                    } else {
-                        list.closest('.menu__course-box').classList.add('selected');
-                        list.closest('.menu__course-box').previousElementSibling.classList.add('selected');
-                        list.closest('.menu__course').classList.remove('hide-accardeon');
-                    }
-                });
-            }
-            showNotFound();
-        });
-    });
+	document.querySelectorAll('.menu-search--js [name="category"]').forEach(input => {
+		input.addEventListener('keyup', function() {
+			let val = this.value.toLowerCase();
+			if (val === '') {
+				document.querySelectorAll('.menu__course-box.selected').forEach(item => item.classList.remove('selected'));
+				document.querySelectorAll('.menu__course').forEach(acc => acc.classList.remove('hide-accardeon'));
+			} else {
+				document.querySelectorAll('[data-name-menu]').forEach(item => {
+					if (item.getAttribute('data-name-menu').toLowerCase().includes(val)) {
+						item.classList.remove('hide-accardeon');
+						//console.log(val);
+					} else {
+						item.classList.add('hide-accardeon');
+					}
+				});
+				document.querySelectorAll('.menu__list').forEach(list => {
+					let allVacancies = list.querySelectorAll('li').length;
+					let allVacanciesHide = list.querySelectorAll('li.hide-accardeon').length;
+					if (allVacancies === allVacanciesHide) {
+						let courseBox = list.closest('.menu__course-box');
+						if (courseBox) {
+							courseBox.classList.remove('selected');
+							let prevSibling = courseBox.previousElementSibling;
+							if (prevSibling) {
+								prevSibling.classList.remove('selected');
+							}
+						}
+						list.closest('.menu__course').classList.add('hide-accardeon');
+					} else {
+						let courseBox = list.closest('.menu__course-box');
+						if (courseBox) {
+							courseBox.classList.add('selected');
+							let prevSibling = courseBox.previousElementSibling;
+							if (prevSibling) {
+								prevSibling.classList.add('selected');
+							}
+						}
+						list.closest('.menu__course').classList.remove('hide-accardeon');
+					}
+				});
+			}
+			showNotFound();
+		});
+	});
+	
 
-    // Function to show/hide "not found" message
     function showNotFound() {
-        let allAccardeonsActive = document.querySelectorAll('.menu__course:not(.hide-accardeon)').length;
-        let notFoundElement = document.querySelector('.not-found');
-        if (allAccardeonsActive === 0) {
-            notFoundElement.style.display = 'block';
-        } else {
-            notFoundElement.style.display = 'none';
-        }
-    }
+		let allAccardeonsActive = document.querySelectorAll('.menu__course:not(.hide-accardeon)').length;
+		let notFoundElement = document.querySelector('.not-found');
+		if (notFoundElement) { // Check if the element exists before accessing its style
+			if (allAccardeonsActive === 0) {
+				notFoundElement.style.display = 'block';
+			} else {
+				notFoundElement.style.display = 'none';
+			}
+		}
+	}
+	
 });
 
 

@@ -41,7 +41,7 @@ exports.styles = styles
 
 const stylesLibs = () => {
   return src([
-	  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
+	  'node_modules/@fancyapps/ui/dist/fancybox/fancybox.css',
     ])
     .pipe(concat('libs.css'))
     .pipe(dest('docs/css'))
@@ -54,9 +54,7 @@ exports.stylesLibs = stylesLibs
 
 const scriptsLibs = () => {
   return src([  
-	  'node_modules/jquery/dist/jquery.min.js',
-	  'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-	  'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
+	  'node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js',
     ])
     .pipe(concat('libs.js'))
     .pipe(dest('docs/js'))

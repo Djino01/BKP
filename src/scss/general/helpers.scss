@@ -3,7 +3,9 @@
 	background-image: url(../img/bg-form.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100vh;
+	height: 100svh;
+	max-width: 1024px;
+	margin: 0 auto;
 }
 
 .btn {

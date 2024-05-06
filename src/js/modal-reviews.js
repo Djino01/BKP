@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let modal = document.querySelector('.modal');
 	let currentClass = '';
 
+	const form = document.querySelector('.modal-form');
+	const url = form?.getAttribute('action');
+	const method = form?.getAttribute('method');
+
     lessenLike?.addEventListener('click', function(e) {
 		modal.classList.add("active");
     });
@@ -21,7 +25,31 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 	
 	modalForm?.addEventListener('click', function(e) {
-		e.preventDefault();
+
+		function serializeForm(formElement) {
+			const formData = new FormData(formElement);
+			const pairs = {};
+			for (const [key, value] of formData.entries()) {
+				pairs[key] = value;
+			}
+			return new URLSearchParams(pairs).toString();
+		}
+		const data = serializeForm(form);
+		fetch(url, {
+			method: method,
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+			},
+			body: data
+		})
+		.then(response => response.text())
+		.then(data => {
+			console.log('Success:', data);
+		})
+		.catch(error => {
+			console.error('Error:', error);
+		});
+
 		modal.classList.remove("active");
 		const activeRadio = document.querySelector('input[name="reviews"]:checked');
 		if (activeRadio) {

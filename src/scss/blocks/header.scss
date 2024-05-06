@@ -3,7 +3,8 @@
 	width: 100%;
 	height: 56px;
 	top: 0;
-	left: 0;
+	left: 50%;
+	transform: translateX(-50%);
 	z-index: 100;
 	border-bottom: 1px solid #e7e7e7;
 	box-shadow: 0 4px 4px 0 rgba(231, 231, 231, 0.25);
@@ -12,6 +13,8 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 10px 20px;
+	max-width: 1024px;
+	margin: 0 auto;
 	&__burger {
 		width: 20px;
 		height: 16px;
@@ -52,5 +55,11 @@
 		&:hover {
 			color: #73a09a;
 		}
+	}
+}
+@media (max-width: 1023px) {
+	.header {
+		left: 0;
+		transform: translateX(0%);
 	}
 }
