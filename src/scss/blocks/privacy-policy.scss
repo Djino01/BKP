@@ -1,0 +1,97 @@
+.privacy-policy {
+	&__article {
+		padding-bottom: 100px;
+		h1 {
+			font-weight: 600;
+			font-size: 21px;
+			line-height: 1.2;
+			text-transform: uppercase;
+			color: var(--dark);
+			margin: 0px 0px 20px;
+		}
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 1.2;
+			text-transform: uppercase;
+			color: var(--dark);
+			margin: 0px 0px 16px;
+		}
+		a {
+			color: #73a09a;
+			transition: all 0.3s;
+			&:hover {
+				opacity: 0.6;
+				transition: all 0.3s;
+			}
+		}
+		p {
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 138%;
+		}
+		ul {
+			list-style: disc;
+			padding-left: 18px;
+			li + li {
+				margin-top: 5px;
+			}
+			li {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 138%;
+			}
+		}
+		ol {
+			padding: 0px;
+			list-style: none;
+			counter-reset: myCounter;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			li {
+				position: relative;
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 138%;
+				padding-left: 18px;
+				&::before {
+					content: "";
+					position: absolute;
+					width: 18px;
+					left: 0px;
+					top: 0px;
+					font-weight: 400;
+					font-size: 14px;
+					line-height: 138%;
+					counter-increment: myCounter;
+					content: counter(myCounter) ".";
+				}
+			}
+			li + li {
+				margin-top: 5px;
+			}
+		}
+		p + p,
+		p + ul {
+			margin-top: 10px;
+		}
+		p + h2,
+		p + h3,
+		p + h4,
+		p + h5,
+		ul + h2,
+		ul + h3,
+		ul + h4,
+		ul + h5,
+		ol + h2,
+		ol + h3,
+		ol + h4,
+		ol + h5 {
+			margin-top: 32px;
+		}
+	}
+}
