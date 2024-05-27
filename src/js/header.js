@@ -85,3 +85,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    let headerProfile = document.querySelector('.header-profile');
+    let headerProfileList = document.querySelector('.header-profile__list');
+
+    headerProfile?.addEventListener('click', function(e) {
+        e.stopPropagation();
+        headerProfileList.classList.toggle("active");
+    });
+
+    document.addEventListener('click', function(e) {
+        if (headerProfileList?.classList.contains('active') && !headerProfile.contains(e.target) && !headerProfileList.contains(e.target)) {
+            headerProfileList?.classList.remove('active');
+        }
+    });
+
+    headerProfileList?.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
+
+
+

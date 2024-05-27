@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Обучение</title>
+	<title>Изменить профиль</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="address=no">
@@ -244,89 +244,91 @@
 	</div>
 </div>
 
-<div class="tape">
+<div class="page page_item">
 
-	<div class="tape__body dragscroll">
+	<div class="page__body dragscroll">
 
-		<div class="tape__wrap">
-
-			<div class="card">
-				<div class="card__avatar"></div>
-				<div class="card__body">
-					<div class="card__name">IvanIvan:</div>
-					<div class="card__items">
-						<div class="card__item"><span>Название</span>: “Добейся успеха, не смотря ни на что!</div>
-						<div class="card__item"><span>Дата и время проведения</span>: <br>05 мая 2024 г. 16.00</div>
-						<div class="card__item"><span>Описание</span>: научу вас быть самим собой и зарабатывать
-							миллионы</div>
-					</div>
-					<div class="card__img">
-						<img src="img/card-img.svg" alt="">
-					</div>
-					<div class="card__date">14:46</div>
-				</div>
+		<a href="educations.html" class="back">
+			<div class="back__icon">
+				<svg width="40" height="12" viewBox="0 0 40 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0 6L10 11.7735L10 0.226495L0 6ZM40 5L9 5L9 7L40 7L40 5Z" fill="#292D32" />
+				</svg>
 			</div>
+			<div class="back__caption">На главую</div>
+		</a>
 
-			<div class="card">
-				<div class="card__avatar">
-					<img src="img/avatar.jpg" alt="">
-				</div>
-				<div class="card__body">
-					<div class="card__name">IvanIvan:</div>
-					<div class="card__items">
-						<div class="card__item"><span>Название</span>: “Добейся успеха, не смотря ни на что!</div>
-						<div class="card__item"><span>Дата и время проведения</span>: <br>05 мая 2024 г. 16.00</div>
-						<div class="card__item"><span>Описание</span>: научу вас быть самим собой и зарабатывать
-							миллионы</div>
+		<form action="#" class="form">
+			<h1 class="form__title title">изменить профиль</h1>
+			<div class="form__body">
+				<label class="form__label">
+					<div class="form__caption">Имя</div>
+					<div class="form__box">
+						<input type="text" value="Иван" name="name" autocomplete="name" class="form__field">
 					</div>
-					<div class="card__img">
-						<img src="img/card-img.svg" alt="">
+				</label>
+				<label class="form__label">
+					<div class="form__caption">Фамилия</div>
+					<div class="form__box">
+						<input type="text" value="Иванов" name="surname" class="form__field">
 					</div>
-					<div class="card__date">22 апреля 2024</div>
-				</div>
+				</label>
+				<label class="form__label">
+					<div class="form__caption">Отчество</div>
+					<div class="form__box">
+						<input type="text" value="Иванович" name="surname" class="form__field">
+					</div>
+				</label>
+				<label class="form__label">
+					<div class="form__caption">E-mail</div>
+					<div class="form__box">
+						<input type="email" value="ivanivan@mail.ru" name="mail" class="form__field" disabled>
+						<div class="form__info">*обратитесь на горячую линию для смены</div>
+					</div>
+				</label>
+				<label class="form__label">
+					<div class="form__caption">Телефон</div>
+					<div class="form__box">
+						<input type="text" value="+79999999999" name="phone" autocomplete="phone"
+							class="form__field phone-mask" disabled>
+						<div class="form__info">*обратитесь на горячую линию для смены</div>
+					</div>
+				</label>
+				<label class="form__label">
+					<div class="form__caption">Никнейм в телеграм</div>
+					<div class="form__box">
+						<input type="text" value="@vanya" name="nickname" autocomplete="nickname" class="form__field">
+					</div>
+				</label>
+				<label class="form__label">
+					<div class="form__caption">Новый пароль</div>
+					<div class="form__box">
+						<input type="password" name="password" class="form__field">
+						<div class="form__password">
+							<img src="img/password.svg" alt="">
+							<img src="img/password-active.svg" alt="">
+						</div>
+					</div>
+				</label>
+				<label class="form__label">
+					<div class="form__caption">Подтвердите пароль</div>
+					<div class="form__box">
+						<input type="password" name="password-repeat" class="form__field">
+						<div class="form__password">
+							<img src="img/password.svg" alt="">
+							<img src="img/password-active.svg" alt="">
+						</div>
+					</div>
+				</label>
 			</div>
-
-			<div class="card">
-				<div class="card__avatar"></div>
-				<div class="card__body">
-					<div class="card__name">IvanIvan:</div>
-					<div class="card__items">
-						<div class="card__item"><span>Название</span>: “Добейся успеха, не смотря ни на что!</div>
-						<div class="card__item"><span>Дата и время проведения</span>: <br>05 мая 2024 г. 16.00</div>
-						<div class="card__item"><span>Описание</span>: научу вас быть самим собой и зарабатывать
-							миллионы</div>
-					</div>
-					<div class="card__img">
-						<img src="img/card-img.svg" alt="">
-					</div>
-					<div class="card__date">14:46</div>
+			<div class="form__bottom">
+				<button class="form__btn btn">сохранить изменения</button>
+				<div class="form__agreement">
+					<a href="#" class="lessen__like modal--js" data-modal="delete-modal">Удалить профиль</a>
 				</div>
+				<div class="form__agreement">* обратитесь на горячую линию,<br> чтобы поменять номер телефона и
+					email:<br><br><a href="#">Позвонить на горячую линию</a></div>
 			</div>
-
-			<div class="card">
-				<div class="card__avatar">
-					<img src="img/avatar.jpg" alt="">
-				</div>
-				<div class="card__body">
-					<div class="card__name">IvanIvan:</div>
-					<div class="card__items">
-						<div class="card__item"><span>Название</span>: “Добейся успеха, не смотря ни на что!</div>
-						<div class="card__item"><span>Дата и время проведения</span>: <br>05 мая 2024 г. 16.00</div>
-						<div class="card__item"><span>Описание</span>: научу вас быть самим собой и зарабатывать
-							миллионы</div>
-					</div>
-					<div class="card__img">
-						<img src="img/card-img.svg" alt="">
-					</div>
-					<div class="card__date">22 апреля 2024</div>
-				</div>
-			</div>
-
-		</div>
-
-		<div class="tape__bottom">
-			<button class="tape__btn">Показать еще 20 записей</button>
-		</div>
+		</form>
 
 	</div>
 
@@ -334,7 +336,7 @@
 
 <footer class="footer">
 	<nav class="footer__menu">
-		<a href="educations.html" class="footer__link">
+		<a href="javascript:void(0)" class="footer__link active">
 			<div class="footer__link-icon">
 				<svg width="38" height="32" viewBox="0 0 38 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
@@ -349,7 +351,7 @@
 			</div>
 			<div class="footer__link-caption">Обучение</div>
 		</a>
-		<a href="javascript:void(0)" class="footer__link active">
+		<a href="tape.html" class="footer__link">
 			<div class="footer__link-icon">
 				<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
@@ -370,6 +372,105 @@
 		</a>
 	</nav>
 </footer>
+
+<div class="modal like-modal">
+	<div class="modal__bg"></div>
+	<div class="modal__body">
+		<div class="modal__top">
+			<div class="modal__title">Оставьте ваш отзыв об уроке:</div>
+			<button class="modal__closed modal-closed--js">
+				<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M18 18L1 1" stroke="#2E3038" stroke-width="1.5" stroke-linecap="round" />
+					<path d="M1 18L18 1" stroke="#2E3038" stroke-width="1.5" stroke-linecap="round" />
+				</svg>
+			</button>
+		</div>
+		<form action="lessen.html" method="post" class="modal-form">
+			<div class="modal-form__body">
+				<textarea class="modal-form__textarea textarea" name="message" placeholder="Оставьте отзыв"></textarea>
+				<button class="modal-form__btn modal-form--js">
+					<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M12.0675 0H4.94096C1.84542 0 0 1.8445 0 4.9385V12.053C0 15.1555 1.84542 17 4.94096 17H12.059C15.1546 17 17 15.1555 17 12.0615V4.9385C17.0085 1.8445 15.1631 0 12.0675 0ZM10.8769 8.9505L7.87492 11.951C7.74736 12.0785 7.58578 12.138 7.4242 12.138C7.26262 12.138 7.10104 12.0785 6.97347 11.951C6.72685 11.7045 6.72685 11.2965 6.97347 11.05L9.52475 8.5L6.97347 5.95C6.72685 5.7035 6.72685 5.2955 6.97347 5.049C7.2201 4.8025 7.6283 4.8025 7.87492 5.049L10.8769 8.0495C11.132 8.296 11.132 8.704 10.8769 8.9505Z"
+							fill="#292D32" />
+					</svg>
+				</button>
+			</div>
+			<div class="modal-reviews">
+				<label class="modal-reviews__checkbox">
+					<input type="radio" name="reviews" value="bad">
+					<div class="modal-reviews__checkbox-box">
+						<div class="modal-reviews__checkbox-icon">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M8.39001 18.4902V8.33022C8.39001 7.93022 8.51001 7.54022 8.73001 7.21022L11.46 3.15022C11.89 2.50022 12.96 2.04022 13.87 2.38022C14.85 2.71022 15.5 3.81022 15.29 4.79022L14.77 8.06022C14.73 8.36022 14.81 8.63022 14.98 8.84022C15.15 9.03022 15.4 9.15022 15.67 9.15022H19.78C20.57 9.15022 21.25 9.47022 21.65 10.0302C22.03 10.5702 22.1 11.2702 21.85 11.9802L19.39 19.4702C19.08 20.7102 17.73 21.7202 16.39 21.7202H12.49C11.82 21.7202 10.88 21.4902 10.45 21.0602L9.17001 20.0702C8.68001 19.7002 8.39001 19.1102 8.39001 18.4902Z"
+									fill="#BC4131" />
+								<path
+									d="M5.21 6.37988H4.18C2.63 6.37988 2 6.97988 2 8.45988V18.5199C2 19.9999 2.63 20.5999 4.18 20.5999H5.21C6.76 20.5999 7.39 19.9999 7.39 18.5199V8.45988C7.39 6.97988 6.76 6.37988 5.21 6.37988Z"
+									fill="#BC4131" />
+							</svg>
+						</div>
+						<div class="modal-reviews__checkbox-desc">Доработать</div>
+					</div>
+				</label>
+				<label class="modal-reviews__checkbox">
+					<input type="radio" name="reviews" value="normal">
+					<div class="modal-reviews__checkbox-box">
+						<div class="modal-reviews__checkbox-icon">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M8.39 18.4902V8.33022C8.39 7.93022 8.51 7.54022 8.73 7.21022L11.46 3.15022C11.89 2.50022 12.96 2.04022 13.87 2.38022C14.85 2.71022 15.5 3.81022 15.29 4.79022L14.77 8.06022C14.73 8.36022 14.81 8.63022 14.98 8.84022C15.15 9.03022 15.4 9.15022 15.67 9.15022H19.78C20.57 9.15022 21.25 9.47022 21.65 10.0302C22.03 10.5702 22.1 11.2702 21.85 11.9802L19.39 19.4702C19.08 20.7102 17.73 21.7202 16.39 21.7202H12.49C11.82 21.7202 10.88 21.4902 10.45 21.0602L9.17 20.0702C8.68 19.7002 8.39 19.1102 8.39 18.4902Z"
+									fill="#FFC24C" />
+								<path
+									d="M5.21 6.37988H4.18C2.63 6.37988 2 6.97988 2 8.45988V18.5199C2 19.9999 2.63 20.5999 4.18 20.5999H5.21C6.76 20.5999 7.39 19.9999 7.39 18.5199V8.45988C7.39 6.97988 6.76 6.37988 5.21 6.37988Z"
+									fill="#FFC24C" />
+							</svg>
+						</div>
+						<div class="modal-reviews__checkbox-desc">Хорошо</div>
+					</div>
+				</label>
+				<label class="modal-reviews__checkbox">
+					<input type="radio" name="reviews" value="good" checked>
+					<div class="modal-reviews__checkbox-box">
+						<div class="modal-reviews__checkbox-icon">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M8.39 18.4902V8.33022C8.39 7.93022 8.51 7.54022 8.73 7.21022L11.46 3.15022C11.89 2.50022 12.96 2.04022 13.87 2.38022C14.85 2.71022 15.5 3.81022 15.29 4.79022L14.77 8.06022C14.73 8.36022 14.81 8.63022 14.98 8.84022C15.15 9.03022 15.4 9.15022 15.67 9.15022H19.78C20.57 9.15022 21.25 9.47022 21.65 10.0302C22.03 10.5702 22.1 11.2702 21.85 11.9802L19.39 19.4702C19.08 20.7102 17.73 21.7202 16.39 21.7202H12.49C11.82 21.7202 10.88 21.4902 10.45 21.0602L9.17 20.0702C8.68 19.7002 8.39 19.1102 8.39 18.4902Z"
+									fill="#57817B" />
+								<path
+									d="M5.21 6.37988H4.18C2.63 6.37988 2 6.97988 2 8.45988V18.5199C2 19.9999 2.63 20.5999 4.18 20.5999H5.21C6.76 20.5999 7.39 19.9999 7.39 18.5199V8.45988C7.39 6.97988 6.76 6.37988 5.21 6.37988Z"
+									fill="#57817B" />
+							</svg>
+						</div>
+						<div class="modal-reviews__checkbox-desc">Отлично</div>
+					</div>
+				</label>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div class="modal delete-modal">
+	<div class="modal__bg"></div>
+	<div class="modal__body">
+		<div class="modal__top">
+			<div class="modal__title">Желаете удалить профиль?</div>
+			<button class="modal__closed modal-closed--js">
+				<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M18 18L1 1" stroke="#2E3038" stroke-width="1.5" stroke-linecap="round" />
+					<path d="M1 18L18 1" stroke="#2E3038" stroke-width="1.5" stroke-linecap="round" />
+				</svg>
+			</button>
+		</div>
+		<div class="modal__buttons">
+			<button class="delete-modal__btn btn btn btn_item">Да</button>
+			<button class="delete-modal__btn btn modal-closed--js">Нет</button>
+		</div>
+	</div>
+</div>
 
 </main>
 <script src="js/libs.js"></script>

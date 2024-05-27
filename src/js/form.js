@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let form = document.querySelector('.form');
     form?.addEventListener('submit', function(event) {
 		let error = false;
+		let passwordValue = '';
         let formLabels = document.querySelectorAll('.form__label');
 
         formLabels.forEach(function(label) {
@@ -14,8 +15,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 label.appendChild(errorBox);
             }
 
+            if (inputField.name === 'password') {
+                passwordValue = inputField.value;
+            }
+
             if (inputField.value.trim() === '') {
                 errorBox.textContent = 'Проверьте корректность введенных данных';
+                errorBox.classList.add('active');
+                error = true;
+            } else if (inputField.name === 'password' && inputField.value.length < 6) {
+                errorBox.textContent = 'Пароль должен содержать от 6 символов';
+                errorBox.classList.add('active');
+                error = true;
+            } else if (inputField.name === 'password-repeat' && inputField.value !== passwordValue) {
+                errorBox.textContent = 'Не совпадает с введенным паролем';
                 errorBox.classList.add('active');
                 error = true;
             } else {

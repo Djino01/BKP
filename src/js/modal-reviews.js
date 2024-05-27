@@ -1,27 +1,54 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let lessenLike = document.querySelector('.lessen-like--js');
-    let modalClosed = document.querySelector('.modal-closed--js');
+    let mdalBtn = document.querySelectorAll('.modal--js');
+    let modalClosed = document.querySelectorAll('.modal-closed--js');
     let modalForm = document.querySelector('.modal-form--js');
     let modal = document.querySelector('.modal');
+    let lessenLike = document.querySelector('.lessen__like');
 	let currentClass = '';
 
 	const form = document.querySelector('.modal-form');
 	const url = form?.getAttribute('action');
 	const method = form?.getAttribute('method');
 
-    lessenLike?.addEventListener('click', function(e) {
-		modal.classList.add("active");
-    });
+	mdalBtn.forEach(function (btn) {
+		btn.addEventListener('click', function(event) {
+			let targetElement = event.target.closest('.modal--js');
+			if (targetElement) {
+				var modalName = targetElement.getAttribute('data-modal');
+				if (modalName) {
+					var modalElement = document.querySelector(`.${modalName}`);
+					if (modalElement) {
+						modalElement.classList.add("active");
+					} else {
+						console.error(`Элемент с селектором .${modalName} не найден.`);
+					}
+				} else {
+					console.error('Атрибут data-modal не найден.');
+				}
+			} else {
+				console.error('Целевой элемент с классом modal--js не найден.');
+			}
+		});
+	});
 
-	modalClosed?.addEventListener('click', function(e) {
-		modal.classList.remove("active");
+	modalClosed?.forEach(function (closed) {
+		closed?.addEventListener('click', function(e) {
+			document.querySelectorAll('.modal').forEach(function (el) {
+				el.classList.remove('active');
+			});
+		});
     });
 
 	document.addEventListener('mouseup', function(e) {
-		const activeBox = document.querySelector('.modal__body');
-		if (activeBox && !activeBox?.contains(e.target)) {
-			modal.classList.remove("active");
-		}
+		const modalBodies = document.querySelectorAll('.modal__body');
+		modalBodies.forEach(modalBody => {
+			if (!modalBody.contains(e.target)) {
+				const modal = modalBody.closest('.modal');
+				if (modal) {
+					modal.classList.remove("active");
+				}
+			}
+		});
 	});
 	
 	modalForm?.addEventListener('click', function(e) {
