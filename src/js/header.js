@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     headerProfile?.addEventListener('click', function(e) {
         e.stopPropagation();
+		document.querySelector('.header-notice__container').classList.remove("active");
         headerProfileList.classList.toggle("active");
     });
 
@@ -102,6 +103,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     headerProfileList?.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    let headerNotice = document.querySelector('.header-notice');
+    let headerNoticeList = document.querySelector('.header-notice__container');
+
+    headerNotice?.addEventListener('click', function(e) {
+        e.stopPropagation();
+		document.querySelector('.header-profile__list').classList.remove("active");
+        headerNoticeList.classList.toggle("active");
+    });
+
+    document.addEventListener('click', function(e) {
+        if (headerNoticeList?.classList.contains('active') && !headerNotice.contains(e.target) && !headerNoticeList.contains(e.target)) {
+            headerNoticeList?.classList.remove('active');
+        }
+    });
+
+    headerNoticeList?.addEventListener('click', function(e) {
         e.stopPropagation();
     });
 });
