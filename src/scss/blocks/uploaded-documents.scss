@@ -1,0 +1,48 @@
+.uploaded-documents {
+	margin-top: 40px;
+	padding-left: 12px;
+	&__title {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 138%;
+		color: #292d32;
+		margin-bottom: 22px;
+	}
+	&__item {
+		display: flex;
+		align-items: flex-start;
+		gap: 12px;
+		& + & {
+			margin-top: 22px;
+		}
+	}
+	&__delete {
+		width: 12px;
+		height: 12px;
+		margin-top: 4px;
+		svg {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+	&__box {
+		flex: 1;
+	}
+	&__name {
+		margin-bottom: 8px;
+	}
+	&__status {
+		font-style: italic;
+		font-weight: 300;
+		&.under-inspection {
+			color: #ffc24c;
+		}
+		&.accepted {
+			color: #73a09a;
+		}
+		&.error {
+			color: #bc4131;
+		}
+	}
+}

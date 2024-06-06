@@ -81,7 +81,7 @@ exports.scripts = scripts
 // Copy
 
 const copy = () => {
-  return src(['src/fonts/**/*', 'src/img/**/*', 'src/video/**/*', 'src/js/pace/**/*'], { base: 'src' })
+  return src(['src/fonts/**/*', 'src/img/**/*', 'src/video/**/*', 'src/php/**/*', 'src/js/pace/**/*'], { base: 'src' })
     .pipe(dest('docs'))
     .pipe(sync.stream({ once: true }))
 };
@@ -116,7 +116,7 @@ const watcher = () => {
   watch('src/*.html', series(html))
   watch('src/scss/**/*.scss', series(styles))
   watch('src/js/**/*.js', series(scripts))
-  watch(['src/fonts/**/*', 'src/img/**/*',], series(copy))
+  watch(['src/fonts/**/*', 'src/img/**/*', 'src/php/**/*',], series(copy))
 };
 
 exports.watcher = watcher

@@ -1,0 +1,108 @@
+@@include('inc/doc-start.html', {
+"title": "Документы"
+})
+
+@@include('inc/page-header.html')
+
+<div class="page page_item">
+
+	<div class="page__body dragscroll">
+
+		<form action="php/document.php" enctype="multipart/form-data" method="post" class="form form-document">
+			<h1 class="form__title title">документы</h1>
+			<div class="form__body">
+				<label class="form__label">
+					<div class="select">
+						<div class="select-title">
+							<div class="select-title__value">Тип документа</div>
+							<div class="select-title__arrow">
+								<img src="img/select-arrow.svg" alt="">
+							</div>
+						</div>
+						<div class="select-options">
+							<div class="select-options__scroll dragscroll">
+								<div class="select-options__wrap">
+									<div class="select-options__value" data-value="Тип документа 1">Тип документа 1
+									</div>
+									<div class="select-options__value" data-value="Тип документа 2">Тип документа 2
+									</div>
+									<div class="select-options__value" data-value="Тип документа 3">Тип документа 3
+									</div>
+									<div class="select-options__value" data-value="Тип документа 4">Тип документа 4
+									</div>
+									<div class="select-options__value" data-value="Тип документа 5">Тип документа 5
+									</div>
+									<div class="select-options__value" data-value="Тип документа 6">Тип документа 6
+									</div>
+									<div class="select-options__value" data-value="Тип документа 7">Тип документа 7
+									</div>
+									<div class="select-options__value" data-value="Тип документа 8">Тип документа 8
+									</div>
+									<input class="type-document-js" type="hidden" name="type" value="0">
+								</div>
+							</div>
+						</div>
+					</div>
+				</label>
+				<label class="form__label">
+					<div class="upload">
+						<input type="file" name="file" id="file" required class="inputfile">
+						<label for="file">
+							<img src="img/file-icon.svg" alt="">
+							<span>выберите файл</span>
+						</label>
+					</div>
+				</label>
+				<label class="form__label">
+					<textarea name="message" class="form__field textarea textarea_height"
+						placeholder="Комментарий к файлу "></textarea>
+				</label>
+			</div>
+			<div class="form__bottom">
+				<button class="form__btn btn btn-upload-js" type="submit">загрузить документ</button>
+			</div>
+		</form>
+
+		<div class="uploaded-documents">
+			<div class="uploaded-documents__title">Загруженные документы:</div>
+			<div class="uploaded-documents__items">
+				<div class="uploaded-documents__item">
+					<div class="uploaded-documents__delete" data-id="1" data-action="php/delete.php">
+						<img src="img/uploaded-delete.svg" alt="">
+					</div>
+					<div class="uploaded-documents__box">
+						<div class="uploaded-documents__name">важный документ.txt</div>
+						<div class="uploaded-documents__status under-inspection">На проверке</div>
+					</div>
+				</div>
+				<div class="uploaded-documents__item">
+					<div class="uploaded-documents__delete" data-id="2" data-action="php/delete.php">
+						<img src="img/uploaded-delete.svg" alt="">
+					</div>
+					<div class="uploaded-documents__box">
+						<div class="uploaded-documents__name">очень важный документ.txt</div>
+						<div class="uploaded-documents__status accepted">Принят</div>
+					</div>
+				</div>
+				<div class="uploaded-documents__item">
+					<div class="uploaded-documents__delete" data-id="3" data-action="php/delete.php">
+						<img src="img/uploaded-delete.svg" alt="">
+					</div>
+					<div class="uploaded-documents__box">
+						<div class="uploaded-documents__name">очень важный документ.txt</div>
+						<div class="uploaded-documents__status error">Не принят (проверьте качество загруженного
+							документа и корректность данных)</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+@@include('inc/page-footer-document.html')
+
+@@include('inc/modal.html')
+
+@@include('inc/doc-end.html')

@@ -140,3 +140,24 @@
 		}
 	}
 }
+
+.upload-document-modal {
+	&__wrap {
+		min-height: 62px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 138%;
+		text-align: center;
+		color: #292d32;
+	}
+	.modal {
+		&__body {
+			border-color: #6b9791;
+			padding: 0;
+		}
+	}
+}
