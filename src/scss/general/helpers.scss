@@ -145,7 +145,8 @@
 		border-color: #5bc16c;
 		color: #141516;
 	}
-	&_height {
+	&_height,
+	&.form__field {
 		height: 100px;
 	}
 }

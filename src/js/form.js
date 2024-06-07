@@ -3,11 +3,16 @@ document.addEventListener('DOMContentLoaded', function() {
     form?.addEventListener('submit', function(event) {
 		let error = false;
 		let passwordValue = '';
+        let newPasswordValue = '';
         let formLabels = document.querySelectorAll('.form__label');
 
         formLabels.forEach(function(label) {
             let inputField = label.querySelector('.form__field');
             let errorBox = label.querySelector('.form__error');
+
+			if (!inputField || inputField.disabled) {
+                return;
+            }
 
 			if (!errorBox) {
                 errorBox = document.createElement('div');
@@ -19,10 +24,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 passwordValue = inputField.value;
             }
 
+			if (inputField.classList.contains('password-new') && inputField.value.trim() !== '') {
+                newPasswordValue = inputField.value;
+            }
+
             if (inputField.value.trim() === '') {
-                errorBox.textContent = 'Проверьте корректность введенных данных';
-                errorBox.classList.add('active');
-                error = true;
+                if (!inputField.classList.contains('password-new') && !inputField.classList.contains('password-new-recovery')) {
+                    errorBox.textContent = 'Проверьте корректность введенных данных';
+                    errorBox.classList.add('active');
+                    error = true;
+                } else {
+                    errorBox.classList.remove('active');
+                    errorBox.textContent = '';
+                    if (errorBox.parentNode) {
+                        errorBox.parentNode.removeChild(errorBox);
+                    }
+                }
             } else if (inputField.name === 'password' && inputField.value.length < 6) {
                 errorBox.textContent = 'Пароль должен содержать от 6 символов';
                 errorBox.classList.add('active');
@@ -31,12 +48,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 errorBox.textContent = 'Не совпадает с введенным паролем';
                 errorBox.classList.add('active');
                 error = true;
+            } else if (inputField.classList.contains('password-new') && inputField.value.length < 6) {
+                errorBox.textContent = 'Пароль должен содержать от 6 символов';
+                errorBox.classList.add('active');
+                error = true;
+            } else if (inputField.classList.contains('password-new-recovery') && inputField.value !== newPasswordValue) {
+                errorBox.textContent = 'Не совпадает с введенным паролем';
+                errorBox.classList.add('active');
+                error = true;
             } else {
                 errorBox.classList.remove('active');
                 errorBox.textContent = '';
-                errorBox.parentNode.removeChild(errorBox);
+                if (errorBox.parentNode) {
+                    errorBox.parentNode.removeChild(errorBox);
+                }
             }
         });
+
+		if (newPasswordValue !== '' && form.querySelector('.password-new-recovery').value !== newPasswordValue) {
+            let recoveryLabel = form.querySelector('.password-new-recovery').closest('.form__label');
+            let recoveryErrorBox = recoveryLabel.querySelector('.form__error');
+            if (!recoveryErrorBox) {
+                recoveryErrorBox = document.createElement('div');
+                recoveryErrorBox.classList.add('form__error');
+                recoveryLabel.appendChild(recoveryErrorBox);
+            }
+            recoveryErrorBox.textContent = 'Не совпадает с введенным паролем';
+            recoveryErrorBox.classList.add('active');
+            error = true;
+        }
 
 		if(error) {
 			event.preventDefault();

@@ -130,32 +130,6 @@ textarea {
 }
 
 input {
-	font-family: var(--font-family);
-	background: var(--white);
-	font-size: 14px;
-	line-height: 138%;
-	color: var(--dark);
-	border: 1px solid var(--grey);
-	border-radius: 12px;
-	padding: 11px 12px;
-	height: 43px;
-	width: 100%;
-	transition: all 0.3s ease;
-	&::-webkit-input-placeholder {
-		color: var(--dark);
-	}
-	&::-moz-placeholder {
-		color: var(--dark);
-	}
-	&:-moz-placeholder {
-		color: var(--dark);
-	}
-	&:-ms-input-placeholder {
-		color: var(--dark);
-	}
-	&:focus {
-		border-color: var(--green);
-	}
 	&[type="text"],
 	&[type="email"],
 	&[type="password"],

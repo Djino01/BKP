@@ -2,64 +2,73 @@
 "title": "Регистрация"
 })
 
-<form action="#" class="form">
-	<h1 class="form__title title">Регистрация</h1>
-	<div class="form__body">
-		<label class="form__label">
-			<div class="form__caption">Имя</div>
-			<div class="form__box">
-				<input type="text" name="name" autocomplete="name" class="form__field">
+<div class="page page_item">
+
+	<div class="page__body dragscroll">
+
+		<form action="#" class="form">
+			<h1 class="form__title title">Регистрация</h1>
+			<div class="form__body">
+				<label class="form__label">
+					<div class="form__caption">Имя</div>
+					<div class="form__box">
+						<input type="text" name="name" autocomplete="name" class="form__field">
+					</div>
+				</label>
+				<label class="form__label">
+					<div class="form__caption">Фамилия</div>
+					<div class="form__box">
+						<input type="text" name="surname" class="form__field">
+					</div>
+				</label>
+				<label class="form__label">
+					<div class="form__caption">Отчество</div>
+					<div class="form__box">
+						<input type="text" name="surname" class="form__field">
+					</div>
+				</label>
+				<label class="form__label">
+					<div class="form__caption">Телефон</div>
+					<div class="form__box">
+						<input type="text" name="phone" autocomplete="phone" class="form__field phone-mask">
+					</div>
+				</label>
+				<label class="form__label">
+					<div class="form__caption">E-mail</div>
+					<div class="form__box">
+						<input type="email" name="mail" class="form__field">
+					</div>
+				</label>
+				<label class="form__label">
+					<div class="form__caption">Введите пароль</div>
+					<div class="form__box">
+						<input type="password" name="password" class="form__field">
+						<div class="form__password">
+							<img src="img/password.svg" alt="">
+							<img src="img/password-active.svg" alt="">
+						</div>
+					</div>
+				</label>
+				<label class="form__label">
+					<div class="form__caption">Повторите пароль</div>
+					<div class="form__box">
+						<input type="password" name="password-repeat" class="form__field">
+						<div class="form__password">
+							<img src="img/password.svg" alt="">
+							<img src="img/password-active.svg" alt="">
+						</div>
+					</div>
+				</label>
 			</div>
-		</label>
-		<label class="form__label">
-			<div class="form__caption">Фамилия</div>
-			<div class="form__box">
-				<input type="text" name="surname" class="form__field">
-			</div>
-		</label>
-		<label class="form__label">
-			<div class="form__caption">Отчество</div>
-			<div class="form__box">
-				<input type="text" name="surname" class="form__field">
-			</div>
-		</label>
-		<label class="form__label">
-			<div class="form__caption">Телефон</div>
-			<div class="form__box">
-				<input type="text" name="phone" autocomplete="phone" class="form__field phone-mask">
-			</div>
-		</label>
-		<label class="form__label">
-			<div class="form__caption">E-mail</div>
-			<div class="form__box">
-				<input type="email" name="mail" class="form__field">
-			</div>
-		</label>
-		<label class="form__label">
-			<div class="form__caption">Введите пароль</div>
-			<div class="form__box">
-				<input type="password" name="password" class="form__field">
-				<div class="form__password">
-					<img src="img/password.svg" alt="">
-					<img src="img/password-active.svg" alt="">
+			<div class="form__bottom">
+				<button class="form__btn btn">Регистрация</button>
+				<div class="form__agreement">У вас уже есть аккаунт?<br> <a href="authorization.html">Авторизуйтесь</a>
 				</div>
 			</div>
-		</label>
-		<label class="form__label">
-			<div class="form__caption">Повторите пароль</div>
-			<div class="form__box">
-				<input type="password" name="password" class="form__field">
-				<div class="form__password">
-					<img src="img/password.svg" alt="">
-					<img src="img/password-active.svg" alt="">
-				</div>
-			</div>
-		</label>
+		</form>
+
 	</div>
-	<div class="form__bottom">
-		<button class="form__btn btn">Регистрация</button>
-		<div class="form__agreement">У вас уже есть аккаунт?<br> <a href="authorization.html">Авторизуйтесь</a></div>
-	</div>
-</form>
+
+</div>
 
 @@include('inc/doc-end.html')

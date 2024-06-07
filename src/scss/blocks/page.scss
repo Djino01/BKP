@@ -1,31 +1,29 @@
 .page {
-	padding: 96px 0px 120px;
+	padding: 56px 0px 120px;
 	height: 100svh;
 	&__body {
 		overflow: auto;
-		height: calc(100svh - 216px);
-		padding-right: 20px;
-		padding-left: 20px;
-		padding-bottom: 20px;
+		height: calc(100svh - 136px);
+		padding: 20px;
 	}
 	&__title {
 		margin-bottom: 22px;
 	}
+	.back {
+		padding-left: 0px;
+	}
+	.form {
+		padding: 0;
+		min-height: auto;
+		max-width: 100%;
+	}
 	&_item {
-		padding-top: 56px;
-		.back {
-			padding-left: 0px;
-		}
+		padding: 0px;
 		.page {
 			&__body {
-				height: calc(100svh - 136px);
-				padding-top: 20px;
+				height: 100%;
+				padding: 40px 20px;
 			}
-		}
-		.form {
-			padding: 0;
-			min-height: auto;
-			max-width: 100%;
 		}
 	}
 }
