@@ -301,13 +301,13 @@
 				<label class="form__label">
 					<div class="form__caption">Имя</div>
 					<div class="form__box">
-						<input type="text" value="Иван" name="name" autocomplete="name" class="form__field">
+						<input type="text" value="Иван" name="name" autocomplete="name" class="form__field required">
 					</div>
 				</label>
 				<label class="form__label">
 					<div class="form__caption">Фамилия</div>
 					<div class="form__box">
-						<input type="text" value="Иванов" name="surname" class="form__field">
+						<input type="text" value="Иванов" name="surname" class="form__field required">
 					</div>
 				</label>
 				<label class="form__label">
@@ -334,13 +334,14 @@
 				<label class="form__label">
 					<div class="form__caption">Никнейм в телеграм</div>
 					<div class="form__box">
-						<input type="text" value="@vanya" name="nickname" autocomplete="nickname" class="form__field">
+						<input type="text" value="@vanya" name="nickname" autocomplete="nickname"
+							class="form__field required">
 					</div>
 				</label>
 				<label class="form__label">
 					<div class="form__caption">Новый пароль</div>
 					<div class="form__box">
-						<input type="password" name="password" class="form__field password-new">
+						<input type="password" name="password" class="form__field password-new required">
 						<div class="form__password">
 							<img src="img/password.svg" alt="">
 							<img src="img/password-active.svg" alt="">
@@ -350,7 +351,8 @@
 				<label class="form__label">
 					<div class="form__caption">Подтвердите пароль</div>
 					<div class="form__box">
-						<input type="password" name="password-repeat" class="form__field password-new-recovery">
+						<input type="password" name="password-repeat"
+							class="form__field password-new-recovery required">
 						<div class="form__password">
 							<img src="img/password.svg" alt="">
 							<img src="img/password-active.svg" alt="">

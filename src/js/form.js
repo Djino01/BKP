@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
             let inputField = label.querySelector('.form__field');
             let errorBox = label.querySelector('.form__error');
 
-			if (!inputField || inputField.disabled) {
-                return;
-            }
+			if (!inputField || inputField.disabled || !inputField.classList.contains('required')) {
+				return;
+			}
 
 			if (!errorBox) {
                 errorBox = document.createElement('div');
