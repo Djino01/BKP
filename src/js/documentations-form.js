@@ -12,13 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (fileName) {
                 label.querySelector('span').innerHTML = fileName;
-                console.log('Selected file:', fileName); // выводим имя файла в консоль
             } else {
                 label.innerHTML = labelVal;
             }
         });
-
-        // Firefox bug fix
         input.addEventListener('focus', function() { input.classList.add('has-focus'); });
         input.addEventListener('blur', function() { input.classList.remove('has-focus'); });
     });
@@ -58,18 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             console.log('Success:', data);
             showModal(modalSuccess);
-
-            // Добавление нового элемента в начало списка
-            const uploadedDocumentsItems = document.querySelector('.uploaded-documents__items');
-            const newItem = document.createElement('div');
-            newItem.classList.add('uploaded-documents__item');
-            newItem.innerHTML = `
-                <div class="uploaded-documents__box">
-                    <div class="uploaded-documents__name">${fileName}</div>
-                    <div class="uploaded-documents__status under-inspection">На проверке</div>
-                </div>
-            `;
-            uploadedDocumentsItems.insertBefore(newItem, uploadedDocumentsItems.firstChild);
 
             // Сброс формы
             form.reset();
