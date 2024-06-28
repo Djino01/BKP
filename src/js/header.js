@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
     let headerNotice = document.querySelector('.header-notice');
     let headerNoticeList = document.querySelector('.header-notice__container');
 
@@ -126,7 +126,41 @@ document.addEventListener('DOMContentLoaded', function() {
     headerNoticeList?.addEventListener('click', function(e) {
         e.stopPropagation();
     });
+});*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    let headerNotices = document.querySelectorAll('.header-notice');
+
+    headerNotices.forEach(function(headerNotice) {
+        let headerNoticeList = headerNotice.querySelector('.header-notice__container');
+
+        headerNotice.addEventListener('click', function(e) {
+            e.stopPropagation();
+
+            // Закрыть все открытые списки уведомлений
+            document.querySelectorAll('.header-notice__container.active').forEach(function(activeList) {
+                if (activeList !== headerNoticeList) {
+                    activeList.classList.remove('active');
+                }
+            });
+
+            document.querySelector('.header-profile__list').classList.remove("active");
+            headerNoticeList.classList.toggle("active");
+        });
+
+        document.addEventListener('click', function(e) {
+            if (headerNoticeList.classList.contains('active') && !headerNotice.contains(e.target) && !headerNoticeList.contains(e.target)) {
+                headerNoticeList.classList.remove('active');
+            }
+        });
+
+        headerNoticeList.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    });
 });
+
+
 
 
 

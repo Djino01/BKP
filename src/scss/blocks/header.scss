@@ -50,6 +50,15 @@
 		display: flex;
 		align-items: center;
 		gap: 12px;
+		.header-notice {
+			&:first-child {
+				.header-notice {
+					&__container {
+						max-width: 230px;
+					}
+				}
+			}
+		}
 	}
 	&__btn {
 		font-weight: 600;
@@ -127,7 +136,8 @@
 		}
 	}
 }
-.header-notice {
+.header-notice,
+.header-progress {
 	width: 30px;
 	height: 32px;
 	cursor: pointer;
@@ -264,6 +274,12 @@
 		font-size: 14px;
 		line-height: 138%;
 		color: #292d32;
+	}
+}
+.header-progress {
+	margin-right: 8px;
+	&__container {
+		max-width: 220px;
 	}
 }
 @media (max-width: 1023px) {

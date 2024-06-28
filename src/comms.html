@@ -1,0 +1,42 @@
+@@include('inc/doc-start.html', {
+"title": "Регистрация"
+})
+
+@@include('inc/page-header.html', {
+color: 'header--light'
+})
+
+<div class="page ">
+	<div class="page__body dragscroll">
+
+		<a href="/training/" class="back">
+			<div class="back__icon">
+				<svg width="40" height="12" viewBox="0 0 40 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0 6L10 11.7735L10 0.226495L0 6ZM40 5L9 5L9 7L40 7L40 5Z" fill="#292D32"></path>
+				</svg>
+			</div>
+			<div class="back__caption">К списку</div>
+		</a>
+
+		<div class="lessen">
+			<div class="page__wrap">
+				<div class="lessen__body">
+					<div class="lessen__text lessen__text_p-none">
+
+						<p>Приветствуетм, выберете актуальную ссылку:</p>
+						<br>
+						<div class="lessen__body comms-buttons">
+							<a href="/comms/?type=CHAT" class="lessen__btn btn">Чат с юристом</a>
+							<a href="/comms/?type=COMPLAINT" class="lessen__btn btn">Жалоба на юриста</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+@@include('inc/page-footer.html')
+
+@@include('inc/doc-end.html')
