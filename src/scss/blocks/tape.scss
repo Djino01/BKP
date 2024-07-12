@@ -12,6 +12,7 @@
 		display: flex;
 		justify-content: center;
 		margin-top: 40px;
+		margin-bottom: 100px;
 	}
 	&__btn {
 		display: inline-flex;
@@ -20,5 +21,32 @@
 		text-transform: uppercase;
 		text-decoration: underline;
 		color: #73a09a;
+	}
+}
+
+.tape-form {
+	position: fixed;
+	width: 100%;
+	bottom: 80px;
+	left: 0;
+	z-index: 10;
+	padding: 10px 16px;
+	border-top: 1px solid #e7e7e7;
+	box-shadow: 0 -4px 4px 0 rgba(231, 231, 231, 0.25);
+	background-color: #fff;
+	&__textarea {
+		padding-right: 45px;
+	}
+	&__body {
+		width: 100%;
+		position: relative;
+	}
+	&__btn {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		top: 12px;
+		right: 12px;
+		cursor: pointer;
 	}
 }
